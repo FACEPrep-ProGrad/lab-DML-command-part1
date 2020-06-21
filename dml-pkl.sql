@@ -1,67 +1,67 @@
 -- PROGRESSION 1:
 
 --1. Insert into city
-create table city (name VARCHAR(40));
-INSERT INTO city(name) VALUES ('mumbai');
+
+ insert into city(id,name)values(1,'mumbai');
+Select * from city;
 
 --2. Insert into referee
-create table referee(referee_name VARCHAR(40),referee_id NUMBER(12));
-INSERT INTO referee(referee_name,referee_id ) VALUES ('john',1);
+insert into referee(id,name)values(2,'john');
+select * from referee;
 
 --3. Insert into innings
-create table innings(first_inn VARCHAR(40));
-INSERT INTO innings(first_inn) VALUES('s');
+ insert into innings(id, innings_number)values(2,1);
+select *from innings;
 
 --4. Insert into extra_type
-create table extra_type(variety VARCHAR(20));
-INSERT INTO extra_type(variety) VALUES ('four');
+INSERT INTO extra_type(id,name) VALUES (1, 'four');
+select *from extra_type;
 
 --5. Insert into skill
-create table skill(player_skill VARCHAR(40), player_name VARCHAR(40), player_id NUMBER(12));
-INSERT INTO skill(player_skill,player_name,player_id) VALUES('Hockey','Smith',32);
+INSERT INTO skill VALUES(1,'racing');
+select *from skill;
 
 --6. Insert into team
-create table team(team_color VARCHAR(40), team_name VARCHAR(40));
-INSERT INTO team (team_color, team_name) VALUES('red', 'worries');
+insert into team values(11,'smith','SK',1,3);
+insert into team values(12,'john','Ak',2,6);
+insert into team values(13,'kaly','RK',3,8);
+select *from team;
 
-DROP table team;
+
 
 --7. Insert into player
-create table player(table_num NUMBER(4));
-INSERT INTO player(table_num) VALUES(1);
-
-DROP table player;
---8. Insert into venue
-create table venue(place_name VARCHAR(40));
-INSERT INTO venue (place_name) VALUES('delhi');
-
-DROP table venue;
-
---9. Insert into event
-create table event(event_organisation VARCHAR(40));
-INSERT INTO event (event_organisation) VALUES('Ramcharaya');
-
-DROP table event;
---10. Insert into extra_event
-create table extra_event(name VARCHAR(20));
-INSERT INTO extra_event (name) VALUES('cricket'); 
-
-
---11. Insert into outcome
-create table outcome(out_name VARCHAR(20));
-INSERT INTO outcome (out_name) VALUES ('excellent');
-DROP table outcome;
-
---12. Insert into game
-create table game(game_id VARCHAR(20),game_name VARCHAR(20));
-INSERT INTO game(game_id, game_name) VALUES(12,'badminton');
-
---13. Update player table
+insert into player values(101,'sachin', 'INDIA',1,3);
+insert into player values(102,'aaron', 'AUSTRALIA',2,5);
+insert into player values(104,'kane', 'NEWZEALAND',5,9);
+insert into player values(103,'shakib', 'BANGLADESH',3,7);
 select * from player;
 
+--8. Insert into venue
+insert into venue values(1,'stadium1',1);
+select *from venue;
+
+--9. Insert into event
+insert into event values(1,2,3,4,203,90,490,12,23);
+select *from event;
+
+--10. Insert into extra_event
+insert into extra_event values(1,3,5,7,9);
+select *from extra_event;
+
+--11. Insert into outcome
+    insert into outcome values(1,'STAR',1,1,100);
+select *from outcome;
+
+--12. Insert into game
+insert into game values(1,'21-JUN-21',1,1,1,1,1,1,1,1);
+select *from game;
+
+--13. Update player table
+
+
 UPDATE player
-SET table_num=7
-WHERE table_num=1;
+SET skill_id = 4
+WHERE skill_id = 5;
 
 SELECT * FROM player;
 
@@ -74,26 +74,26 @@ SELECT * FROM player;
 
 --15. Update player table
 UPDATE player
-SET table_num=7
-WHERE table_num=15;
+SET name = 'david'
+WHERE name = 'aaron';
 
 SELECT * FROM player;
 
 --16. Update player table
 UPDATE player
-SET table_num=7
-WHERE table_num=18;
+SET name = 'steve'
+WHERE name = 'david';
 
 SELECT * FROM player;
 
 --17. Delete from extra_type
-DELETE FROM extra_type where variety='four';
+DELETE FROM extra_type where name='four';
 
 SELECT * FROM extra_type;
 
 --18. Delete from referee
 SELECT * FROM referee;
-DELETE FROM referee where referee_name = 'john';
+DELETE FROM referee where name = 'john';
 
 
 SELECT * FROM referee;
@@ -102,14 +102,14 @@ SELECT * FROM referee;
 
 --19. Delete from player
 SELECT * FROM player;
-DELETE FROM player where table_num = 7;
+DELETE FROM player where id = 102;
 
 
 SELECT * FROM player;
 
 --20. Delete from outcome
 SELECT * FROM outcome;
-DELETE FROM outcome where out_name = 'excellent';
+DELETE FROM outcome where status= 'STAR';
 
 
 SELECT * FROM outcome;
